@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 export interface TechStackItem {
   name: string;
@@ -35,15 +35,11 @@ export interface PortfolioData {
   socials: SocialLink[];
 }
 
-/**
- * GET /api/home
- * Returns portfolio data for the home landing page
- */
-export async function GET(request: NextRequest): Promise<NextResponse> {
-  try {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method === 'GET') {
     const portfolioData: PortfolioData = {
       hero: {
-        title: 'Developer Portfolio',
+        title: 'Shivam Gupta',
         subtitle: 'Full-stack developer crafting exceptional digital experiences with modern technologies',
       },
       techStack: [
@@ -135,80 +131,29 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
       ],
     };
 
-    return NextResponse.json(portfolioData, {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-        'Cache-Control': 'public, max-age=3600',
-      },
-    });
-  } catch (error) {
-    console.error('Error fetching portfolio data:', error);
-    return NextResponse.json(
-      { error: 'Internal Server Error' },
-      { status: 500 }
-    );
+    return res.status(200).json(portfolioData);
   }
-}
 
-/**
- * POST /api/home
- * Sends a contact message (optional - for form submissions)
- */
-export async function POST(request: NextRequest): Promise<NextResponse> {
-  try {
-    const body = await request.json();
-    const { name, email, message } = body;
+  if (req.method === 'POST') {
+    const { name, email, message } = req.body;
 
-    // Validate input
     if (!name || !email || !message) {
-      return NextResponse.json(
-        { error: 'Missing required fields: name, email, message' },
-        { status: 400 }
-      );
+      return res.status(400).json({ error: 'Missing required fields: name, email, message' });
     }
 
-    // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: 'Invalid email format' },
-        { status: 400 }
-      );
+      return res.status(400).json({ error: 'Invalid email format' });
     }
 
-    // TODO: Implement email sending logic here
-    // You can use services like Nodemailer, SendGrid, or Mailgun
     console.log('Contact form submission:', { name, email, message });
 
-    return NextResponse.json(
-      {
-        success: true,
-        message: 'Message sent successfully!',
-        data: { name, email },
-      },
-      { status: 200 }
-    );
-  } catch (error) {
-    console.error('Error processing contact form:', error);
-    return NextResponse.json(
-      { error: 'Internal Server Error' },
-      { status: 500 }
-    );
+    return res.status(200).json({
+      success: true,
+      message: 'Message sent successfully!',
+      data: { name, email },
+    });
   }
-}
 
-/**
- * OPTIONS /api/home
- * CORS preflight handler
- */
-export async function OPTIONS(request: NextRequest): Promise<NextResponse> {
-  return new NextResponse(null, {
-    status: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
-  });
+  return res.status(405).json({ error: 'Method not allowed' });
 }

@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 export default function HeroSection() {
   const scrollToSection = (sectionIndex: number) => {
@@ -18,8 +19,21 @@ export default function HeroSection() {
 
       <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
         <div className="space-y-4">
+          <div className="relative w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-white shadow-lg">
+  <Image
+    src="/images/profilepic.jpeg"
+    alt="Shivam Gupta"
+    width={200}
+    height={200}
+    className="object-cover scale-150"
+    priority
+    style={{ objectPosition: 'center 30%' }}
+  />
+</div>
+
+
           <h1 className="text-5xl md:text-7xl font-bold text-pretty leading-tight tracking-tight">
-            Developer <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">Portfolio</span>
+            Shivam <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">Gupta</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Full-stack developer crafting exceptional digital experiences with modern technologies
@@ -36,7 +50,7 @@ export default function HeroSection() {
           </button>
           <button
             onClick={() => scrollToSection(3)}
-            className="px-8 py-3 rounded-full border border-accent text-accent hover:bg-accent/10 font-semibold transition-colors"
+            className="px-8 py-3 rounded-full border border-accent text-white hover:bg-accent/10 font-semibold transition-colors"
           >
             Get in Touch
           </button>
@@ -50,3 +64,5 @@ export default function HeroSection() {
     </section>
   );
 }
+   
+

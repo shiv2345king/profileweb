@@ -4,35 +4,35 @@ const socials = [
   {
     name: 'GitHub',
     icon: '🐙',
-    url: '#',
+    url: 'https://github.com/shiv2345king',
     color: 'hover:text-neutral-400',
     bgColor: 'hover:bg-neutral-900/50',
   },
   {
     name: 'Twitter',
     icon: '𝕏',
-    url: '#',
+    url: 'https://x.com/ShivamGupt49034',
     color: 'hover:text-neutral-300',
     bgColor: 'hover:bg-neutral-800/50',
   },
   {
     name: 'LinkedIn',
     icon: '💼',
-    url: '#',
+    url: 'https://www.linkedin.com/in/shivam-gupta-77a31630b/',
     color: 'hover:text-blue-400',
     bgColor: 'hover:bg-blue-900/20',
   },
   {
     name: 'Instagram',
     icon: '📷',
-    url: '#',
+    url: 'https://www.instagram.com/shiv2345gupta?igsh=dDUweXdlYjV6MDE0',
     color: 'hover:text-pink-400',
     bgColor: 'hover:bg-pink-900/20',
   },
   {
     name: 'Email',
     icon: '✉️',
-    url: 'mailto:your-email@example.com',
+    url: 'https://mail.google.com/mail/u/0/#inbox?compose=new',
     color: 'hover:text-primary',
     bgColor: 'hover:bg-primary/20',
   },
@@ -101,13 +101,13 @@ export default function SocialsSection() {
           </div>
 
           {/* Email Card */}
-          <div className="p-8 rounded-2xl bg-card/50 border border-border hover:border-primary/50 transition-colors space-y-4">
-            <p className="text-muted-foreground text-center">📧 Email me at:</p>
+          <div className="p-8 rounded-2xl bg-card/50 border border-border hover:border-primary/50 bg-white space-y-4">
+            <p className="text-black text-center">📧 Email me at:</p>
             <a
-              href="mailto:your-email@example.com"
+              href="mailto:shivam.gupta19112003@gmail.com"
               className="inline-block w-full text-center py-3 rounded-xl bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
             >
-              your-email@example.com
+              shivam.gupta19112003@gmail.com
             </a>
           </div>
         </div>

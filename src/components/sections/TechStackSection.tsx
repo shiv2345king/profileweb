@@ -37,6 +37,24 @@ const technologies = [
     icon: '📦',
     color: 'from-purple-500 to-indigo-500',
   },
+  {
+    name: 'ShadCN UI',
+    category: 'UI Library',
+    icon: '▲',
+    color: 'from-pink-500 to-rose-500',
+  },
+  {
+    name: 'Tailwind CSS',
+    category: 'CSS Framework',
+    icon: '🌬️',
+    color: 'from-sky-400 to-blue-500',
+  },
+  {
+    name:'React Router',
+    category: 'Routing',
+    icon: '🧭',
+    color: 'from-green-400 to-green-600',
+  }
 ];
 
 export default function TechStackSection() {
@@ -44,7 +62,7 @@ export default function TechStackSection() {
     <section className="relative min-h-screen flex items-center justify-center px-4 md:px-8 py-20">
       {/* Background gradient */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/3 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 right-0 w-96 h-96 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto w-full space-y-16 animate-fade-in-up">
@@ -63,7 +81,7 @@ export default function TechStackSection() {
           {technologies.map((tech, index) => (
             <div
               key={tech.name}
-              className="group relative p-6 rounded-2xl bg-card/50 border border-border hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 cursor-pointer"
+              className="group relative p-6 rounded-2xl bg-white border border-border hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 cursor-pointer"
               style={{
                 animation: `fadeInUp 0.6s ease-out ${index * 0.1}s backwards`,
               }}
@@ -75,7 +93,7 @@ export default function TechStackSection() {
                 {/* Icon and Name */}
                 <div className="flex items-start justify-between">
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-bold group-hover:text-accent transition-colors">
+                    <h3 className="text-2xl font-bold group-hover:text-accent text-black">
                       {tech.name}
                     </h3>
                     <p className="text-sm text-muted-foreground">{tech.category}</p>
@@ -101,11 +119,11 @@ export default function TechStackSection() {
             <p className="text-muted-foreground">Technologies</p>
           </div>
           <div className="text-center space-y-2">
-            <h3 className="text-3xl font-bold text-secondary">Full-Stack</h3>
+            <h3 className="text-3xl font-bold text-white">Full-Stack</h3>
             <p className="text-muted-foreground">Development</p>
           </div>
           <div className="text-center space-y-2">
-            <h3 className="text-3xl font-bold text-accent">Modern</h3>
+            <h3 className="text-3xl font-bold text-white">Modern</h3>
             <p className="text-muted-foreground">Architecture</p>
           </div>
         </div>

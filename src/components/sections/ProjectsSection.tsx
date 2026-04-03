@@ -2,14 +2,15 @@
 
 import Image from 'next/image';
 
+
 const projects = [
   {
     id: 1,
     name: 'Secret Messaging App',
     description: 'A secure, end-to-end encrypted messaging platform with real-time communication and privacy-first design.',
-    technologies: ['React', 'Express.js', 'MongoDB', 'WebSockets'],
-    image: '/secret-messaging-logo.jpg',
-    link: '#',
+    technologies: ['Next.js ▲ ', 'Typescript 🌬️ ', 'MongoDB 🍃', 'ShadCN UI ▲ ', 'Tailwind CSS 🌬️ ', 'Resend'],
+    image: '/images/secret-messaging-image.png',
+    link: 'https://a-mystery-message-app-a7gj.onrender.com/',
     featured: true,
   },
 ];
@@ -35,11 +36,11 @@ export default function ProjectsSection() {
         </div>
 
         {/* Projects Grid */}
-        <div className="space-y-8">
+        <div className="space-y-8 bg-white p-6 rounded-3xl">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group relative rounded-3xl overflow-hidden border border-border hover:border-accent/50 transition-all duration-300"
+              className="group relative rounded-3xl overflow-hidden border border-border bg-gray-100 hover:border-accent/50 transition-all duration-300"
             >
               {/* Project Card Background */}
               <div className="relative bg-gradient-to-br from-card to-muted/30 p-8 md:p-12">
@@ -52,7 +53,7 @@ export default function ProjectsSection() {
                           Featured Project
                         </span>
                       )}
-                      <h3 className="text-3xl md:text-4xl font-bold group-hover:text-primary transition-colors">
+                      <h3 className="text-3xl md:text-4xl font-bold group-hover:text-gray-400 transition-colors text-white">
                         {project.name}
                       </h3>
                     </div>
@@ -62,21 +63,21 @@ export default function ProjectsSection() {
                     </p>
 
                     {/* Tech Tags */}
-                    <div className="flex flex-wrap gap-2 pt-4">
+                  <div className="flex flex-wrap gap-2 pt-4">
                       {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 text-sm rounded-full bg-secondary/20 text-secondary border border-secondary/30 hover:border-secondary transition-colors"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                       <span
+                      key={tech}
+                         className="px-3 py-1 text-sm rounded-full bg-white border border-secondary/30 hover:border-secondary text-black font-semibold tracking-wide"
+                      >
+                         {tech}
+                     </span>
+                    ))}
+                 </div>
 
                     {/* CTA Button */}
                     <div className="pt-6">
                       <a
-                        href={project.link}
+                        href="https://a-mystery-message-app-a7gj.onrender.com/"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 group/btn"
                       >
                         View Project
