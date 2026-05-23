@@ -53,7 +53,7 @@ const projects = [
     'Cloudinary',
   ],
   image: '/images/backend-api.png',
-  link: 'https://github.com/shiv2345king/BackendYtit',
+  link: 'https://github.com/shiv2345king/BackendYt',
   featured: true,
 }
 ];
