@@ -13,6 +13,15 @@ const projects = [
     link: 'https://a-mystery-message-app-a7gj.onrender.com/',
     featured: true,
   },
+  {
+    id: 2,
+    name: 'Project Two',
+    description: 'An AI-powered blogging platform with secure JWT cookie-based authentication, smart post reviews, likes, comments, and seamless content publishing.',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT Authentication','Gemini API', 'Tailwind CSS'],
+    image:'/images/Blog-app.png',
+    link:'https://blog-git-main-shivam-guptas-projects-cd5190e3.vercel.app/',
+    featured:true,
+  }
 ];
 
 export default function ProjectsSection() {
