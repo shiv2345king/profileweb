@@ -39,6 +39,23 @@ const projects = [
       'https://blog-git-main-shivam-guptas-projects-cd5190e3.vercel.app/',
     featured: true,
   },
+  {
+  id: 3,
+  name: 'Unified Social Media Backend API (Twitter + YouTube System)',
+  description:
+    'A scalable backend system that combines Twitter-like and YouTube-like functionalities into a single API. It supports authentication, post creation, video uploads, and cloud-based media storage with a modular architecture.',
+  technologies: [
+    'Node.js',
+    'Express.js',
+    'MongoDB',
+    'JWT Authentication',
+    'Multer',
+    'Cloudinary',
+  ],
+  image: '/images/backend-api.png',
+  link: 'https://github.com/shiv2345king/BackendYtit',
+  featured: true,
+}
 ];
 
 export default function ProjectsSection() {
