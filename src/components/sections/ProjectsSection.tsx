@@ -17,7 +17,7 @@ const projects = [
       'Resend',
     ],
     image: '/images/secret-messaging-image.png',
-    link: 'https://a-mystery-message-app-a7gj.onrender.com/',
+    link: 'https://a-mystery-message-app.onrender.com',
     featured: true,
   },
   {
