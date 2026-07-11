@@ -55,6 +55,25 @@ const projects = [
   image: '/images/backend-api.png',
   link: 'https://github.com/shiv2345king/BackendYt',
   featured: true,
+},
+{
+  id: 4,
+  name: 'DeepScan',
+  description:
+    'An AI model to detect Deepfake videos. It uses advanced computer vision techniques to analyze video frames and identify manipulated content, providing a reliable tool for media verification.',
+    technologies: [
+      'Node.js',
+      'ExpressJs',
+      'MongoDB',
+      'JWT Authentication',
+      'Cloudinary',
+      'Next.js',
+      'Brevo OTP Verification',
+      'Hugging face Model'
+    ],
+    image: '/images/logo.png',
+    link: 'https://deepfake-app-pbxt.onrender.com',
+    featured: true,
 }
 ];
 
